@@ -1,5 +1,18 @@
 const input = document.querySelector('#input')
 const inputBtn = document.querySelector('#inputBtn')
+const weatherIn = document.querySelector('#weatherIn')
+const location = document.querySelector('#location')
+const icon = document.getElementById('icon');
+const temp = document.getElementById('temp');
+const wetter = document.getElementById('wetter');
+const localTime = document.getElementById('localTime');
+const windSpeed = document.getElementById('windSpeed');
+const cloudiness = document.getElementById('cloud');
+const pressure = document.getElementById('pressure');
+const humidity = document.getElementById('hum');
+const sunrise = document.getElementById('sunrise');
+const sunset = document.getElementById('sunset');
+const geoCoords = document.getElementById('geo');
 
 const apiKey = 'fb25968545916abfa0a7401ce5b36714'
 
