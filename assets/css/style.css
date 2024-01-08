@@ -1,6 +1,50 @@
+@font-face {
+    font-family: 'al';
+    src: url('../fonts/Agbalumo/Agbalumo-Regular.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'al';
 }
 
+html {
+    background-color: #1d1d1d;
+    color: white;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+section {
+    background-color: rgba(0, 115, 255, 0.607);
+    min-width: 90%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 2rem;
+    margin: 1rem;
+    box-shadow: 0 0 2rem rgb(7, 66, 89);
+}
+
+.divs div {
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: .4rem;
+    display: flex;
+}
+
+.divs p {
+    padding: 0 .2rem;
+}
