@@ -35,22 +35,23 @@ const getWeather = () => {
         icon.setAttribute("src", iconPng);
         temp.textContent = data.main.temp + ' C°';
         wetter.textContent = ` ${data.weather[0].description}`;
-        windSpeed.textContent = ' ' + data.wind.speed + 'km/h';
+        windSpeed.textContent = ' ' + data.wind.speed + ' km/h';
         cloudiness.textContent = ' ' + data.weather[0].description;
-        pressure.textContent = ' ' + data.main.pressure + 'hpa';
-        humidity.textContent = ' ' + data.main.humidity;
+        pressure.textContent = ' ' + data.main.pressure + ' hpa';
+        humidity.textContent = ' ' + data.main.humidity + ' %';
         sunrise.textContent = ' ' + getLocalTime(data.sys.sunrise, data.timezone);
         sunset.textContent = ' ' + getLocalTime(data.sys.sunset, data.timezone);
-        geoCoords.innerHTML = `Längengrad: ${data.coord.lon} <br> Breitengrad: ${data.coord.lat}`;
+        geoCoords.innerHTML = `Längengrad: ${data.coord.lon}° <br> Breitengrad: ${data.coord.lat}°`;
         function getTrueTime () {
             return localTimeText.textContent = getLocalTime(data.dt, data.timezone)
         }
         getTrueTime()
         
-    });
+    })
+    .catch((error) => console.log(error), clearInterval(interval))
 };
 
-setInterval((getWeather), 1000)
+const interval = setInterval((getWeather), 1000)
 
 
 
