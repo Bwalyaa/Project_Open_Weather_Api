@@ -10,8 +10,10 @@
     <main>
         <section>
             <div>
-                <input type="text" name="input" id="input">
-                <button id="inputBtn">Suchen</button>
+                <form onsubmit="getWeather(); return false">
+                    <input type="text" name="input" id="input">
+                    <button id="inputBtn">Suchen</button>
+                </form>
             </div>
             <div>
                 <h2 id="weatherIn"></h2>
@@ -25,35 +27,35 @@
         </section>
         <section class="divs">
             <div>
-                <p>Lokale Uhrzeit</p>
+                <p>Lokale Uhrzeit:</p>
                 <p id="localTime"></p>
             </div>
             <div>
-                <p>Windgeschwindigkeit</p>
+                <p>Windgeschwindigkeit:</p>
                 <p id="windSpeed"></p>
             </div>
             <div>
-                <p>Bewölkung</p>
+                <p>Bewölkung:</p>
                 <p id="cloud"></p>
             </div>
             <div>
-                <p>Luftdruck</p>
+                <p>Luftdruck:</p>
                 <p id="pressure"></p>
             </div>
             <div>
-                <p>Luftfeuchtigkeit</p>
+                <p>Luftfeuchtigkeit:</p>
                 <p id="hum"></p>
             </div>
             <div>
-                <p>Sonnenaufgang</p>
+                <p>Sonnenaufgang:</p>
                 <p id="sunrise"></p>
             </div>
             <div>
-                <p>Sonnenuntergang</p>
+                <p>Sonnenuntergang:</p>
                 <p id="sunset"></p>
             </div>
             <div>
-                <p>Koordinaten</p>
+                <p>Koordinaten:</p>
                 <p id="geo"></p>
             </div>
         </section>
