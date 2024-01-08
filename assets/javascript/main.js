@@ -5,7 +5,7 @@ const locationTwo = document.querySelector('#location')
 const icon = document.getElementById('icon');
 const temp = document.getElementById('temp');
 const wetter = document.getElementById('wetter');
-const localTimeText = document.getElementById('localTime');
+let localTimeText = document.getElementById('localTime');
 const windSpeed = document.getElementById('windSpeed');
 const cloudiness = document.getElementById('cloud');
 const pressure = document.getElementById('pressure');
@@ -24,8 +24,7 @@ const getLocalTime = (timestamp, timezone) => {
     let localHour = currentHour.toString().padStart(2, "0");
     return `${localHour}:${localMinutes}`;
 };
-let fuckthis;
-let fuckthisshit;
+
 const getWeather = () => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&lang=de&units=metric&appid=${apiKey}`)
     .then((resp) => resp.json())
@@ -43,12 +42,16 @@ const getWeather = () => {
         sunrise.textContent = ' ' + getLocalTime(data.sys.sunrise, data.timezone);
         sunset.textContent = ' ' + getLocalTime(data.sys.sunset, data.timezone);
         geoCoords.innerHTML = `Längengrad: ${data.coord.lon} <br> Breitengrad: ${data.coord.lat}`;
-        function yo () {
-            localTimeText.textContent = getLocalTime(data.dt, data.timezone)
+        function getTrueTime () {
+            return localTimeText.textContent = getLocalTime(data.dt, data.timezone)
         }
-        setInterval(yo, 1000)
+        getTrueTime()
+        
     });
 };
+
+setInterval((getWeather), 1000)
+
 
 
 inputBtn.addEventListener('click', getWeather);
